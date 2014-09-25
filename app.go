@@ -1,7 +1,6 @@
 package main
 
 import (
-  "io"
   "log"
   "net/http"
   "os"
@@ -10,7 +9,7 @@ import (
 // Runserver
 func main() {
   port := ":" + os.Args[1]
-  ghttp.Handle(
+  http.Handle(
     "/entities/",
     http.StripPrefix("/entities/", http.FileServer(http.Dir("entities"))),
   )
